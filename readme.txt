@@ -1,0 +1,1 @@
+Digite "True" para ativar e "False" (entre aspas) para desativar uma opção.
