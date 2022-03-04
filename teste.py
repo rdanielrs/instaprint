@@ -14,8 +14,6 @@ import os
 file_dir = pathlib.Path(__file__).parent.resolve()
 
 
-#print(my_options['saveFull'])
-
 parent_dir = os.path.expanduser('~/Documents')
 pasta = 'myScreenshots'
 path = os.path.join(parent_dir, pasta)
@@ -28,15 +26,11 @@ fullimg = path + '/' + 'fullimages'
 isFileFull = os.path.isdir(fullimg)
 
 
-
-
-
 if isFile == False:
     os.mkdir(path)
     print(f'Diretório {path} criado')
 else:
     print(f'O diretório {path} já existe')
-    #print(number_files)
 
 lista = os.listdir(path)
 number_files = len(lista)
@@ -97,10 +91,6 @@ def finalcoords(event):
 def showFinalCoords(self):
     width = abs(x1 - x2)
     height = abs(y1 - y2)
-    #print(f"Largura: {width}")
-    #print(f"Altura: {height}")
-    #print(f"Altura: {abs(y1 - y2)}")
-    #print(f"Largura: {abs(x1 - x2)}")
     
 
 def rectInfo():
@@ -155,26 +145,6 @@ def capture(event):
             print(f"Altura: {abs(y1 - y2)}")
             print(f"Largura: {abs(x1 - x2)}")
 
-
-        """
-        elif x1 - x2 < 0 and y1 - y2 > 0:
-            print("Screenshot adicionada!")
-            canvas.delete(my_rectangle)
-            #print(len(lista))
-            win.destroy()
-            image = pyautogui.screenshot(path + "/" + f"IMG_{YEAR}-{MONTH}-{DAY}_{number_files_screenshots - 2}.png", region=(x1, y1, width, height))
-            thumbnail = pyautogui.screenshot(thumb + "/" + f"thumb_{YEAR}-{MONTH}-{DAY}_{number_files_thumbnails - 1}.png")
-            print('teste')
-        
-        elif x2 - x1 < 0 and y2 - y1 > 0:
-            print("Screenshot adicionada!")
-            print('teste')
-            canvas.delete(my_rectangle)
-            #print(len(lista))
-            win.destroy()
-            image = pyautogui.screenshot(path + "/" + f"IMG_{YEAR}-{MONTH}-{DAY}_{number_files_screenshots - 2}.png", region=(x1, y1, width, height))
-            thumbnail = pyautogui.screenshot(thumb + "/" + f"thumb_{YEAR}-{MONTH}-{DAY}_{number_files_thumbnails - 1}.png")
-        """
 
     
 def captureFull():
