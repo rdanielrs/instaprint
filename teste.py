@@ -55,7 +55,7 @@ except:
     print("[ERRO]: options.json não encontrado")
     
     optionDefault = {
-        "saveFull": "False"
+        "saveFull": False
     }
 
     os.path.join(file_dir, "options.json")
@@ -88,10 +88,12 @@ def finalcoords(event):
     resize()
 
 
+
 def showFinalCoords(self):
-    width = abs(x1 - x2)
-    height = abs(y1 - y2)
+    abs(x1 - x2)
+    abs(y1 - y2)
     
+
 
 def rectInfo():
     if my_rectangle > 1:
@@ -123,10 +125,10 @@ def capture(event):
             print("Screenshot adicionada!")
             win.destroy()
             if y1 - y2 < 0:
-                image = pyautogui.screenshot(path + "/" + f"IMG_{YEAR}-{MONTH}-{DAY}_{number_files_screenshots - 2}.png", region=(x2, y1, width, height))
+                pyautogui.screenshot(path + "/" + f"IMG_{YEAR}-{MONTH}-{DAY}_{number_files_screenshots - 2}.png", region=(x2, y1, width, height))
             elif y1 - y2 > 0:
-                image = pyautogui.screenshot(path + "/" + f"IMG_{YEAR}-{MONTH}-{DAY}_{number_files_screenshots - 2}.png", region=(x2, y2, width, height))
-            thumbnail = pyautogui.screenshot(thumb + "/" + f"thumb_{YEAR}-{MONTH}-{DAY}_{number_files_thumbnails - 1}.png")
+                pyautogui.screenshot(path + "/" + f"IMG_{YEAR}-{MONTH}-{DAY}_{number_files_screenshots - 2}.png", region=(x2, y2, width, height))
+            pyautogui.screenshot(thumb + "/" + f"thumb_{YEAR}-{MONTH}-{DAY}_{number_files_thumbnails - 1}.png")
             print(f"Altura: {abs(y1 - y2)}")
             print(f"Largura: {abs(x1 - x2)}")
 
@@ -136,12 +138,10 @@ def capture(event):
             #print(len(lista))
             win.destroy()
             if y1 - y2 < 0:
-                image = pyautogui.screenshot(path + "/" + f"IMG_{YEAR}-{MONTH}-{DAY}_{number_files_screenshots - 2}.png", region=(x1, y1, width, height))
-                #print('teste 1')
+                pyautogui.screenshot(path + "/" + f"IMG_{YEAR}-{MONTH}-{DAY}_{number_files_screenshots - 2}.png", region=(x1, y1, width, height))
             elif y1 - y2 > 0:
-                image = pyautogui.screenshot(path + "/" + f"IMG_{YEAR}-{MONTH}-{DAY}_{number_files_screenshots - 2}.png", region=(x1, y2, width, height))
-                #print('teste 2')    
-            thumbnail = pyautogui.screenshot(thumb + "/" + f"thumb_{YEAR}-{MONTH}-{DAY}_{number_files_thumbnails - 1}.png")
+                pyautogui.screenshot(path + "/" + f"IMG_{YEAR}-{MONTH}-{DAY}_{number_files_screenshots - 2}.png", region=(x1, y2, width, height))   
+            pyautogui.screenshot(thumb + "/" + f"thumb_{YEAR}-{MONTH}-{DAY}_{number_files_thumbnails - 1}.png")
             print(f"Altura: {abs(y1 - y2)}")
             print(f"Largura: {abs(x1 - x2)}")
 
@@ -157,11 +157,11 @@ def captureFull():
 
     number_files_fullimages += 1
 
-    fullimage = pyautogui.screenshot(fullimg + '/' f"fullimage_{YEAR}-{MONTH}-{DAY}_{number_files_fullimages - 1}.png")
+    pyautogui.screenshot(fullimg + '/' f"fullimage_{YEAR}-{MONTH}-{DAY}_{number_files_fullimages - 1}.png")
     print("Screenshot capturada!")
 
 while True:
-    if keyboard.read_key() == 'print screen' and my_options['saveFull'] == "False":
+    if keyboard.read_key() == 'print screen' and my_options['saveFull'] == False:
 
         win = Tk()
 
@@ -187,5 +187,5 @@ while True:
         win.focus_force()
         win.mainloop()
 
-    elif keyboard.read_key() == 'print screen' and my_options['saveFull'] == "True":
+    elif keyboard.read_key() == 'print screen' and my_options['saveFull'] == True:
         captureFull()
