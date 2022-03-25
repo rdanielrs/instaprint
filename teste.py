@@ -15,7 +15,7 @@ file_dir = pathlib.Path(__file__).parent.resolve()
 
 
 parent_dir = os.path.expanduser('~/Documents')
-pasta = 'myScreenshots'
+pasta = 'My Screenshots'
 path = os.path.join(parent_dir, pasta)
 isFile = os.path.isdir(path)
 
