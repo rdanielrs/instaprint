@@ -161,8 +161,8 @@ def captureFull():
     print("Screenshot capturada!")
 
 while True:
-    if keyboard.read_key() == 'print screen' and my_options['saveFull'] == False:
-
+    #if keyboard.read_key() == 'print screen' and my_options['saveFull'] == False:
+    if keyboard.is_pressed('print screen') and my_options['saveFull'] == False:
         win = Tk()
 
         win.geometry("650x250")
@@ -187,5 +187,17 @@ while True:
         win.focus_force()
         win.mainloop()
 
-    elif keyboard.read_key() == 'print screen' and my_options['saveFull'] == True:
+    #elif keyboard.read_key() == 'print screen' and my_options['saveFull'] == True:
+    elif keyboard.is_pressed('print screen') and my_options['saveFull'] == True:
         captureFull()
+
+    elif keyboard.is_pressed('ctrl + f') and my_options['saveFull'] == False:
+        with open("options.json", "w") as option:
+            my_options['saveFull'] = True
+            json.dump(my_options, option)
+
+    elif keyboard.is_pressed('ctrl + f') and my_options['saveFull'] == True:
+        
+        with open("options.json", "w") as option:
+            my_options['saveFull'] = False
+            json.dump(my_options, option)
