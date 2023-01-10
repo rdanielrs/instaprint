@@ -190,16 +190,8 @@ while True:
     
         captureFull()
 
-    elif keyboard.is_pressed('ctrl + f'):
+    elif keyboard.is_pressed('ctrl + /'):
         with open("options.json", "w") as option:
-            my_options['saveFull'] != my_options['saveFull']
+            my_options['saveFull'] = not my_options['saveFull']
             json.dump(my_options, option)
             print(f"Configuração saveFull alterada para: ", my_options['saveFull'])
-
-    """
-    elif keyboard.is_pressed('ctrl + /') and my_options['saveFull'] == True:
-        
-        with open("options.json", "w") as option:
-            my_options['saveFull'] = False
-            json.dump(my_options, option)
-    """
