@@ -67,6 +67,8 @@ finally:
     with open("options.json") as option:
         my_options = json.load(option)
 
+print(f"Screenshots inteiras? ", my_options['saveFull'])
+
 #82 - 189: Funções do programa
 
 def close(self):
