@@ -135,7 +135,6 @@ def capture(event):
         elif x1 - x2 < 0:
             print("Screenshot adicionada!")
             canvas.delete(my_rectangle)
-            #print(len(lista))
             win.destroy()
             if y1 - y2 < 0:
                 pyautogui.screenshot(path + "/" + f"IMG_{YEAR}-{MONTH}-{DAY}_{number_files_screenshots - 2}.png", region=(x1, y1, width, height))
@@ -191,13 +190,16 @@ while True:
     
         captureFull()
 
-    elif keyboard.is_pressed('ctrl + f') and my_options['saveFull'] == False:
+    elif keyboard.is_pressed('ctrl + f'):
         with open("options.json", "w") as option:
-            my_options['saveFull'] = True
+            my_options['saveFull'] != my_options['saveFull']
             json.dump(my_options, option)
+            print(f"Configuração saveFull alterada para: ", my_options['saveFull'])
 
-    elif keyboard.is_pressed('ctrl + f') and my_options['saveFull'] == True:
+    """
+    elif keyboard.is_pressed('ctrl + /') and my_options['saveFull'] == True:
         
         with open("options.json", "w") as option:
             my_options['saveFull'] = False
             json.dump(my_options, option)
+    """
