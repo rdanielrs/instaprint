@@ -1,12 +1,11 @@
-No arquivo options.json, determine a opção "SaveFull" como true ou false para determinar o modo de captura do programa. A opção true salva uma imagem inteira, enquanto a opção false salva uma imagem cortada pelo usuário.
+In the file options.json, set the "SaveFull" option to true or false to determine the program's capture mode. The true option saves a whole image, while the false option saves an image cropped by the user.
 
-As imagens capturadas pelo programa são salvas na pasta "My Screenshots", que se encontra em Documentos.
+The captured images are saved in the "My Screenshots" folder, located in Documents.
 
-- Instruções para a opção "SaveFull: false"
+- Instructions for the "SaveFull: false" option:
 
-Para capturar uma screenshot, aperte o botão "print screen". Isso revelará uma janela de seleção transparente que cobre a tela inteira. Utilize o mouse para delinear a área que deseja capturar em formato retangular. Feito isso, aperte a tecla "c" para capturar a imagem.
+To capture a screenshot, press the "print screen" button. This will reveal a transparent selection window that covers the entire screen. Use the mouse to outline the area you want to capture in a rectangular shape. Once done, press the "c" key to capture the image.
 
+- Instructions for the "SaveFull: true" option:
 
-- Instruções para a opção "SaveFull: true"
-
-Para capturar uma screenshot, aperte o botão "print screen". Ao contrário da opção false, a tela inteira é capturada de forma imediata.
+To capture a screenshot, press the "print screen" button. Unlike the false option, the entire screen is captured immediately.
